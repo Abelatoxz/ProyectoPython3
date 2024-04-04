@@ -1,5 +1,5 @@
 from repositorio import *
-archivo_libros = './libros.txt'
+archivo_libros = './librjhsos.txt'
 
 while True:
     print("\n1. Mostrar un libro por ISBN")
@@ -24,14 +24,18 @@ while True:
 
 
     elif opcion == '2':
-        print("Todos los libros:")
-        libros = mostrar_todos_libros(archivo_libros)
-        for libro in libros:
-            print("ISBN:", libro[0])
-            print("Título:", libro[1])
-            print("Autor:", libro[2])
-            print()
-
+        try:
+            print("Todos los libros:")
+            libros = mostrar_todos_libros(archivo_libros)
+        
+            print("Erro")
+            for libro in libros:
+                print("ISBN:", libro[0])
+                print("Título:", libro[1])
+                print("Autor:", libro[2])
+                print()
+        except TypeError:
+            print("erros")
     elif opcion == '3':
         agregar_libro(archivo_libros)
 

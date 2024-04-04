@@ -1,5 +1,6 @@
 def mostrar_libro(isbn, archivo):
     try: 
+       
        with open(archivo, 'r') as f:
             for line in f:
                 libro_info = line.strip().split('|')
@@ -10,12 +11,16 @@ def mostrar_libro(isbn, archivo):
         print("No se encontro el archivo")
 
 def mostrar_todos_libros(archivo):
-    
-    libros = []
-    with open(archivo, 'r') as f:
-        for line in f:
-            libros.append(line.strip().split('|'))
-    return libros
+    try:
+
+        libros = []
+        with open(archivo, 'r') as f:
+            for line in f:
+                libros.append(line.strip().split('|'))
+            return libros
+    except:
+        print("no se encuentra")   
+     
 
 def agregar_libro(archivo):
     isbn = input("Ingrese el ISBN del libro: ")
