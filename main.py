@@ -1,7 +1,17 @@
 from repositorio import *
+import time
+import os
 archivo_libros = './libros.txt'
+archivo_usuarios = 'usuarios.txt'
+
+if iniciar_sesion(archivo_usuarios):
+    print("¡Bienvenido!")
+else:
+    exit(1)
+time.sleep(2)
 
 while True:
+    os.system('clear')
     print("\n1. Mostrar un libro por ISBN")
     print("2. Mostrar todos los libros")
     print("3. Agregar un libro")
