@@ -1,16 +1,27 @@
-from repositorio import *
-import time
+import hashlib
 import os
-archivo_libros = './libros.txt'
+import time
+from repositorio import *
 archivo_usuarios = 'usuarios.txt'
+archivo_libros = 'libros.txt'
+session = 0
+try:
+    usuario_guardado, contraseña_guardada = verificar_session('usuario.txt')
+    if usuario_guardado is not None and contraseña_guardada is not None:
+        print("¡Bienvenido de nuevo!", usuario_guardado)
+        session = 1
+except FileNotFoundError:
+    pass
 
-if iniciar_sesion(archivo_usuarios):
-    print("¡Bienvenido!")
-else:
-    exit(1)
+if session == 0: 
+    estado = iniciar_sesion(archivo_usuarios)
+    if estado == False:
+        exit()
+
 time.sleep(2)
 
 while True:
+    time.sleep(1)
     os.system('clear')
     print("\n1. Mostrar un libro por ISBN")
     print("2. Mostrar todos los libros")
@@ -31,7 +42,6 @@ while True:
             print("Autor:", libro_encontrado[2])
         else:
             print("Libro no encontrado.")
-
 
     elif opcion == '2':
         print("Todos los libros:")
@@ -57,4 +67,3 @@ while True:
 
     else:
         print("Opción inválida. Por favor, seleccione una opción válida.")
-
