@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-ale|827ccb0eea8a706c4c34a16891f84e7b
-=======
 abel|dc11f1eb62c8e02fba97c03f7c07c225
->>>>>>> 53a442a707a5ec37dabc76e0381bb5ea2c9b4ca8

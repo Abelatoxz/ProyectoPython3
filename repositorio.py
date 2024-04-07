@@ -1,5 +1,5 @@
 import hashlib
-
+import os
 def obtener_hash_md5(texto):
     return hashlib.md5(texto.encode()).hexdigest()
 
@@ -142,4 +142,11 @@ def verificar_session(archivo_usuarios):
     except FileNotFoundError:  
         pass
         
-    
+def cerrar_sesion():
+    print("Cerrando sesión...")
+    try:
+        os.remove('usuario.txt')
+    except FileNotFoundError:
+        pass 
+    exit()
+  

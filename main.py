@@ -32,6 +32,7 @@ while True:
     print("4. Eliminar un libro")
     print("5. Editar un libro")
     print("6. Salir")
+    print("7. Salir y cerrar sesion")
 
     opcion = input("Seleccione una opción: ")
 
@@ -63,6 +64,10 @@ while True:
         elif opcion == '6':
             print("Saliendo del programa...")
             break
+        elif opcion == '7':
+            print("Saliendo del programa...")
+            cerrar_sesion()
+
         else:
             print("Opción inválida. Por favor, seleccione una opción válida.")
     except Exception as e:
