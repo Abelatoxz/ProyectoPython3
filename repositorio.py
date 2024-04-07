@@ -17,7 +17,7 @@ def iniciar_sesion(archivo_usuarios):
                     with open('usuario.txt', 'a') as f:
                         f.write(f"{usuario}|{obtener_hash_md5(contraseña)}\n")
                     return True
-            print("Usuario o contraseña incorrectos. Inténtelo de nuevo. Te quedan:", intentos - 1)
+            print("Usuario o contraseña incorrectos. Inténtelo de nuevo. Te quedan:", intentos - 1, "intentos")
             intentos -= 1
 
     print("Ha superado el número máximo de intentos. Saliendo del programa.")
